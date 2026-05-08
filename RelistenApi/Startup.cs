@@ -182,7 +182,7 @@ namespace Relisten
                     // Relisten public DB seed was preloaded). Our migration 02_BaselineData has
                     // been replaced with a no-op, so we can just MigrateTo(10) from any starting
                     // point — including a fully empty DB.
-                    migrator.MigrateTo(12);
+                    migrator.MigrateTo(13);
 
                     if (migrator.LatestMigration.Version != migrator.CurrentMigration!.Version)
                     {
