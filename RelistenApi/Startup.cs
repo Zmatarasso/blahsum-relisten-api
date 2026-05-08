@@ -179,6 +179,11 @@ namespace Relisten
 
                     if (migrator.CurrentMigration == null || migrator.CurrentMigration.Version == 0)
                     {
+                        // blahsum-relisten: empty-DB bootstrap.
+                        // Upstream assumes the public Relisten DB seed (already at v2 with their
+                        // artist roster). For our own catalog we run migration 1 (schema) and then
+                        // baseline at 2 to skip 02_BaselineData (Relisten's hardcoded artists).
+                        migrator.MigrateTo(1);
                         migrator.Baseline(2);
                     }
 
