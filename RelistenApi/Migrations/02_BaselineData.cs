@@ -13,5 +13,9 @@ namespace Migrations
         protected override void Up()
         {
         }
+
+        protected override void Down()
+        {
+        }
     }
 }
